@@ -1,0 +1,128 @@
+/* Owl Phone Gallery v0.0.1 alpha | VNBStudio.ru */
+body {
+  margin: 0 auto;
+  padding: 20px 0 0 0;
+  background-image: url('../img/bg2.jpg');
+}
+
+#logo {
+  background-image: url('../img/owlphonegallery.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100px;
+}
+#screen {
+  padding: 0 0 20px 0;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+#OPG-container {
+  margin: 0 auto;
+  background-image: url('../img/phone.png');
+  background-size: cover;
+  width:300px;
+  height: 578px;
+  transition:0.3s;
+}
+#OPG-hiddenEl {
+  display: none;
+}
+#OPG-container.rotate {
+-moz-transform: rotate(90deg);
+ -ms-transform: rotate(90deg);
+ -webkit-transform: rotate(90deg);
+ -o-transform: rotate(90deg);
+ transform: rotate(90deg);
+ transition:0.3s;
+}
+
+#OPG-img-container, #OPG-img-show {
+  width: 248px;
+  height: 413px;
+  position: absolute;
+  margin: 81px 0 0 37px;
+  z-index: 15;
+  background-color: #000;
+}
+#OPG-container.rotate  #OPG-img-show {
+  transform: rotate(-90deg);
+  width: 416px;
+  height: 251px;
+  margin: 82px 0px 0px -85px;
+}
+#OPG-img-left, #OPG-img-right {
+  position: absolute;
+  height: 413px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 70%;
+  opacity: 0;
+  z-index: 30;
+  transition:0s;
+  /*background: rgba(0, 0, 0, 0.46);*/
+}
+#OPG-container.rotate #OPG-img-left, #OPG-container.rotate  #OPG-img-right {
+  transform: rotate(-90deg);
+  height: 251px;
+}
+#OPG-container.rotate  #OPG-img-right {
+  margin: -111px 0 0 108px;
+}
+#OPG-container.rotate  #OPG-img-left {
+  margin: 275px 0 0 108px;
+}
+
+#OPG-img-right {
+  margin: 0 0 0 219px;
+}
+
+#OPG-img-left:hover, #OPG-img-right:hover {
+  background-color: rgba(122, 122, 122, 0.3);
+  cursor: pointer;
+  opacity: 1;
+}
+
+#OPG-img-left:hover {
+  background-image: url('../img/left-arrow.svg');
+}
+
+#OPG-img-right:hover {
+  background-image: url('../img/right-arrow.svg');
+}
+
+#OPG-img-show {
+  margin: 0;
+  z-index: 20;
+  background-size: cover;
+  opacity: 0;
+}
+
+#OPG-mark {
+  padding: 10px 0 0 30px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+}
+.OPG-markDot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  border:2px solid #fff;
+  background-color: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+#OPG-mark .OPG-markDot:first-child{
+  margin-right: 10px;
+}
+#OPG-mark .OPG-markDot:not(:first-child){
+    margin-right: 10px;
+}
+.OPG-markDot.fill {
+  background-color: #fff;
+}
